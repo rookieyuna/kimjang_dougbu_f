@@ -28,10 +28,9 @@ export default function Home() {
         setMemberList(res)
     }
 
-
     return (
         <div>
-            <p>이름: {memberList[0]?.name}</p>
+            <p className="font-bold">이름: {memberList[0]?.name}</p>
             <p>주소: {memberList[0]?.address}</p>
             <p>가입일: {dayjs(memberList[0]?.regidate).format('YYYY-MM-DD')}</p>
         </div>
