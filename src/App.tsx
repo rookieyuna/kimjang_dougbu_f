@@ -3,6 +3,7 @@ import Home from './pages';
 import Footer from './pages/common/Footer';
 import Header from './pages/common/Header';
 import Register from './pages/register';
+import Work from './pages/work';
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/work" element={<Work />} />
         </Routes>
       </section>
       <Footer />
