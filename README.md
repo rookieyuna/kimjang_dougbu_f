@@ -23,3 +23,10 @@ TailwindCSS%EB%A1%9C-Header%EC%99%80-Footer-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
 
 ## Tailwind 색상표
 https://flowbite.com/docs/customize/colors/
+
+## datepicker 사용을 위한 react-datepicker library 설치
+^npm install react-datepicker --save
+## typescript를 사용하는 경우 아래를 같이 설치해주어야 함
+^npm install --save-dev @types/react-datepicker
+[참고] https://www.npmjs.com/package/react-datepicker
+https://reactdatepicker.com/

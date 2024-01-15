@@ -1,11 +1,11 @@
-
 import logo from '../../assets/img/logo_temp.jpeg';
 import { Link } from 'react-router-dom';
 import Button from "../../utils/Button";
 import dayjs from 'dayjs';
+import "dayjs/locale/ko"; //한국어
 
 export default function Header () {
-    const currentDate = dayjs(new Date());
+    const currentDate = dayjs(new Date()).locale('ko');
 
     const logout = () =>{
         console.log('logout')
