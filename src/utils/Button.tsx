@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 type Color = 'basic' | 'purple' | 'dark';
-type Size = 'sm' | 'md' | 'lg';
+type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
 	type?: 'submit' | undefined; // type이 undefined인 경우에는 'button'으로 지정
@@ -31,6 +31,10 @@ function Button({ type, color, size, className, onClick, children }: ButtonProps
 	}
 
 	switch (size) {
+		case 'xs': {
+			combinedClassName += ' py-0 px-2 font-medium';
+			break;
+		}
 		case 'sm': {
 			combinedClassName += ' py-2 px-4 font-medium';
 			break;

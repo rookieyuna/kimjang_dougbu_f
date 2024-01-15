@@ -7,6 +7,10 @@ export default function Work () {
         console.log('remainList')
     }
 
+    const done = () =>{
+        console.log('회수염')
+    }
+
     return (
         <div className="container">
             <div className="mx-auto flex flex-wrap p-1 flex-col items-center bg-gray-200">
@@ -32,6 +36,127 @@ export default function Work () {
 
             <Calendar/>
             
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" className="px-6 py-3">
+                                고객
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                품목
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                라벨번호
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                맡긴날짜
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                예약날짜
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                금액(원)
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                메모
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                회수
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                동부103동508호
+                            </th>
+                            <td className="px-6 py-4">
+                                Y3, 원피스2
+                            </td>
+                            <td className="px-6 py-4">
+                                690-694
+                            </td>
+                            <td className="px-6 py-4">
+                                2024.01.02
+                            </td>
+                            <td className="px-6 py-4">
+                                2024.01.20
+                            </td>
+                            <td className="px-6 py-4">
+                                30,000
+                            </td>
+                            <td className="px-6 py-4">
+                                원피스 주머니 튿어짐
+                            </td>
+                            <td className="px-6 py-4">
+                            <Button onClick={done} color='basic' size='xs'>
+                                회수
+                            </Button>
+                                {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
+                            </td>
+                        </tr>
+                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                -
+                            </th>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                            <Button onClick={done} color='basic' size='xs'>
+                                회수
+                            </Button>
+                                {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
+                            </td>
+                        </tr>
+                        <tr className="bg-white dark:bg-gray-800">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                -
+                            </th>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                                -
+                            </td>
+                            <td className="px-6 py-4">
+                            <Button onClick={done} color='basic' size='xs'>
+                                회수
+                            </Button>
+                                {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
