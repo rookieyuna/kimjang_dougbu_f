@@ -2,12 +2,12 @@ import Button from "../../utils/Button";
 import { Link } from 'react-router-dom';
 import Calendar from "../../utils/Calendar";
 
-export default function Work () {
+export default function Customer () {
     const remainList = () =>{
         console.log('remainList')
     }
 
-    const done = () =>{
+    const modify = () =>{
         console.log('회수염')
     }
 
@@ -18,51 +18,36 @@ export default function Work () {
                     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                         <div className="text-sm lg:flex-grow">
                             <a href="#remainList" className="block py-2 px-3 mr-5 lg:inline-block lg:mt-0 text-gray-900 md:dark hover:text-indigo-500">
-                                미회수목록
-                            </a>
-                            <a href="#allList" className="block py-2 px-3 mr-5 lg:inline-block lg:mt-0 text-gray-900 md:dark hover:text-indigo-500">
-                                전체목록
-                            </a>
-                            <a href="#creditList" className="block py-2 px-3 mr-5 lg:inline-block lg:mt-0 text-gray-900 md:dark hover:text-indigo-500">
-                                외상목록
-                            </a>
-                            <a href="#longCreditList" className="block py-2 px-3 mr-5 lg:inline-block lg:mt-0 text-gray-900 md:dark hover:text-indigo-500">
-                                장기미수목록
+                                회원목록
                             </a>
                         </div>
                     </div>
                 </nav>
             </div>
-
-            <Calendar/>
-            
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-2">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                고객
+                                이름/주소
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                품목
+                                전화번호
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                라벨번호
+                                접수건수
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                맡긴날짜
+                                미회수건수
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                예약날짜
+                                등록일자
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                금액(원)
+                                활성화여부
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                메모
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                회수
+                                수정
                             </th>
                         </tr>
                     </thead>
@@ -72,26 +57,23 @@ export default function Work () {
                                 동부103동508호
                             </th>
                             <td className="px-6 py-4">
-                                Y3, 원피스2
+                                010-1234-5678
                             </td>
                             <td className="px-6 py-4">
-                                690-694
+                                10
+                            </td>
+                            <td className="px-6 py-4">
+                                1
                             </td>
                             <td className="px-6 py-4">
                                 2024.01.02
                             </td>
                             <td className="px-6 py-4">
-                                2024.01.20
+                                Y
                             </td>
                             <td className="px-6 py-4">
-                                30,000
-                            </td>
-                            <td className="px-6 py-4">
-                                원피스 주머니 튿어짐
-                            </td>
-                            <td className="px-6 py-4">
-                            <Button onClick={done} color='basic' size='xs' className="text-sm">
-                                회수
+                            <Button onClick={modify} color='basic' size='xs' className="text-sm">
+                                수정
                             </Button>
                                 {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
                             </td>
@@ -116,11 +98,8 @@ export default function Work () {
                                 -
                             </td>
                             <td className="px-6 py-4">
-                                -
-                            </td>
-                            <td className="px-6 py-4">
-                            <Button onClick={done} color='basic' size='xs' className="text-sm">
-                                회수
+                            <Button onClick={modify} color='basic' size='xs' className="text-sm">
+                                수정
                             </Button>
                                 {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
                             </td>
@@ -145,11 +124,8 @@ export default function Work () {
                                 -
                             </td>
                             <td className="px-6 py-4">
-                                -
-                            </td>
-                            <td className="px-6 py-4">
-                            <Button onClick={done} color='basic' size='xs' className="text-sm">
-                                회수
+                            <Button onClick={modify} color='basic' size='xs' className="text-sm">
+                                수정
                             </Button>
                                 {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
                             </td>

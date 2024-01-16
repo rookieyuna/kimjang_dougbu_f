@@ -8,7 +8,7 @@ const Calendar = () => {
     const [startDate, endDate] = dateRange;
     // const [endDate, setEndDate] = useState<Date | null>(new Date());
     return (
-        <div className="relative">
+        <div className="relative m-1">
             <DatePicker
                 selectsRange
                 startDate={startDate}
@@ -25,7 +25,7 @@ const Calendar = () => {
                 shouldCloseOnSelect // 날짜를 선택하면 datepicker가 자동으로 닫힘
                 minDate={new Date('2014-01-01')} // minDate 이전 날짜 선택 불가
                 placeholderText="날짜를 선택하세요"
-                className="items-center bg-gray-50 border border-gray-300 p-1"
+                className="items-center w-72 bg-gray-50 border border-gray-300 p-1 text-sm"
                 icon={
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -30,3 +30,9 @@ https://flowbite.com/docs/customize/colors/
 ^npm install --save-dev @types/react-datepicker
 [참고] https://www.npmjs.com/package/react-datepicker
 https://reactdatepicker.com/
+
+## sidebar, chart 구현을 위한 library 설치
+^npm install flowbite flowbite-react
+^npm install apexcharts --save
+[참고] https://flowbite.com/docs/getting-started/react/
+https://flowbite.com/docs/plugins/charts/

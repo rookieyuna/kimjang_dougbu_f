@@ -27,10 +27,10 @@ export default function Header () {
                         <Link to="/work">작업물</Link>
                     </div>
                     <div className="mr-5 hover:text-gray-900">
-                    회원
+                        <Link to="/customer">회원</Link>
                     </div>
                     <div className="mr-5 hover:text-gray-900">
-                    통계
+                        <Link to="/statistics">통계</Link>
                     </div>
                     <div className="mr-5 hover:text-gray-900">
                     관리
