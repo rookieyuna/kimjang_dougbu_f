@@ -16,6 +16,9 @@
 ^npm install -D tailwindcss postcss autoprefixer
 [참고] https://velog.io/@hokim/React-2-React-Tailwind-%EC%84%B8%ED%8C%85
 
+## vsCode Extentions 설치
+Tailwind CSS IntelliSense
+
 ## Tailwind 기본구조
 [공식문서] https://tailwindcss.com/docs/configuration
 [참고]https://velog.io/@uomnf97_web/
