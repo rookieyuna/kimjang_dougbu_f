@@ -19,6 +19,9 @@
 ## vsCode Extentions 설치
 Tailwind CSS IntelliSense
 
+## Tailwind plugin 설치
+^npm i @tailwindcss/forms
+
 ## Tailwind 기본구조
 [공식문서] https://tailwindcss.com/docs/configuration
 [참고]https://velog.io/@uomnf97_web/

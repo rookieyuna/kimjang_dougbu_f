@@ -29,7 +29,7 @@ export default class HistoryService {
     async findBySdateBetween(historyRdo: HistoryRdo): Promise<History[]>{
         
         // TODO: 환경설정 전까지 주석처리
-        return axios.post(`${this.historyApi}/getName`, historyRdo)
+        return axios.post(`${this.historyApi}/work`, historyRdo)
             .then((response) => response && response.data);
             return []
     }
