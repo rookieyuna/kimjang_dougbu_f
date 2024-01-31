@@ -1,6 +1,10 @@
 import Button from "../../utils/Button";
 import { Link } from 'react-router-dom';
 import Calendar from "../../utils/Calendar";
+import React, {useEffect, useState} from 'react';
+
+import { History } from '../../service/HistoryService';
+import HistoryModule from '../../module/HistoryModule';
 
 export default function Work () {
     const remainList = () =>{
@@ -9,6 +13,36 @@ export default function Work () {
 
     const done = () =>{
         console.log('회수염')
+    }
+
+    const [history, setHistory] = useState<History>({
+        htCode: '',
+        memCode: 0,
+        sdate: 0,
+        edate: 0,
+        rdate: 0,
+        prepaidYn: '',
+        prepaidPrice: 0,
+        debtYn: '',
+        dtCode: 0,
+        cardYn: '',
+        total: 0
+    })
+    const [historyList, setHistoryList] = useState<History[]>([])
+
+    const historyModule = HistoryModule.instance
+
+    useEffect(()=>{
+        findBySdateBetween()
+    },[])
+
+    async function findBySdateBetween() {
+        const res = await historyModule.findBySdateBetween({
+            sdate: 20240101,
+            edate: 20240131,
+            debtYn: ""
+        })
+        setHistoryList(res)
     }
 
     return (
@@ -67,7 +101,26 @@ export default function Work () {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        {historyList.map((item, i) => {
+                            // console.log(item);
+                            return (
+                                <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{item.memCode}</th>{/* 회원주소/명 */}
+                                    <td className="px-6 py-4">{item.dtCode}</td>{/* 품목 */}
+                                    <td className="px-6 py-4">{item.htCode}</td>{/* 라벨번호 */}
+                                    <td className="px-6 py-4">{item.sdate}</td>{/* 맡긴날짜 */}
+                                    <td className="px-6 py-4">{item.rdate}</td>{/* 예약날짜 */}
+                                    <td className="px-6 py-4">{item.total}</td>{/* 금액(원) */}
+                                    <td className="px-6 py-4">{item.prepaidYn}</td>{/* 메모 */}
+                                    <td>
+                                        <Button onClick={done} color='basic' size='xs' className="text-sm">
+                                            회수
+                                        </Button>
+                                    </td>
+                                </tr>
+                            );
+                       })}
+                        {/* <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 동부103동508호
                             </th>
@@ -93,7 +146,7 @@ export default function Work () {
                             <Button onClick={done} color='basic' size='xs' className="text-sm">
                                 회수
                             </Button>
-                                {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
+                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -122,7 +175,6 @@ export default function Work () {
                             <Button onClick={done} color='basic' size='xs' className="text-sm">
                                 회수
                             </Button>
-                                {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
                             </td>
                         </tr>
                         <tr className="bg-white dark:bg-gray-800">
@@ -151,9 +203,8 @@ export default function Work () {
                             <Button onClick={done} color='basic' size='xs' className="text-sm">
                                 회수
                             </Button>
-                                {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
                             </td>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </table>
             </div>

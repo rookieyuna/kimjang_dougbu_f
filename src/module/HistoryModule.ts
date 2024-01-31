@@ -18,9 +18,9 @@ export default class HistoryModule {
         // makeAutoObservable(this);
     }
 
-    initMember(){
+    initHistory(){
         // this.History = null
-        // this.memberList = []
+        // this.historyList = []
     }
 
 

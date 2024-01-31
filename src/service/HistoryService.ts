@@ -14,7 +14,7 @@ export interface History {
     total: number
 }
 
-export  interface HistoryRdo {
+export interface HistoryRdo {
     sdate: number,
     edate: number,
     debtYn: string,
