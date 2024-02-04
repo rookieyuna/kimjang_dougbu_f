@@ -5,6 +5,7 @@ import React, {useEffect, useState} from 'react';
 
 import { History } from '../../service/HistoryService';
 import HistoryModule from '../../module/HistoryModule';
+import { CalendarContainerProps } from "react-datepicker";
 
 export default function Work () {
     const remainList = () =>{
@@ -29,6 +30,7 @@ export default function Work () {
         total: 0
     })
     const [historyList, setHistoryList] = useState<History[]>([])
+    const [startDate, endDate] = useState<CalendarContainerProps[]>([])
 
     const historyModule = HistoryModule.instance
 
@@ -38,8 +40,10 @@ export default function Work () {
 
     async function findBySdateBetween() {
         const res = await historyModule.findBySdateBetween({
-            sdate: 20240101,
+            sdate: 20240101 ,
+            // sdate: {startDate} ,
             edate: 20240131,
+            // edate: {endDate},
             debtYn: ""
         })
         setHistoryList(res)
@@ -68,7 +72,7 @@ export default function Work () {
                 </nav>
             </div>
 
-            <Calendar/>
+            <Calendar />
             
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
